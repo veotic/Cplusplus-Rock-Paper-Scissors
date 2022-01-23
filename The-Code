@@ -1,0 +1,63 @@
+#include <iostream>
+#include <stdlib.h>
+
+using namespace std;
+
+int main() {
+    string question;
+
+    while (question != "quit") {
+        /* randomly picks the 3 options inside the array */
+        char* theArray[3] = {"rock","paper","scissor"};
+        srand((unsigned int)time(NULL));
+        int randomPull = rand() % 3;
+
+        /* ask users 3 options or to quit */
+        cout << "rock, paper, scissor? (say quit to QUIT): ";
+        cin >> question;
+
+        if (question == "rock") {
+            if (theArray[randomPull] == "scissor") {
+                cout << "Enemy pulled out: " << theArray[randomPull] << endl;
+                cout << "You win!" << endl;
+            }
+            else if (theArray[randomPull] == "paper") {
+                cout << "Enemy pulled out: " << theArray[randomPull] << endl;
+                cout << "You lose!" << endl;
+            }
+            else if (theArray[randomPull] == "rock") {
+                cout << "Enemy pulled out: " << theArray[randomPull] << endl;
+                cout << "Tie!" << endl;
+            }
+        }
+        else if (question == "paper") {
+            if (theArray[randomPull] == "rock") {
+                cout << "Enemy pulled out: " << theArray[randomPull] << endl;
+                cout << "You win!" << endl;
+            }
+            else if (theArray[randomPull] == "scissor") {
+                cout << "Enemy pulled out: " << theArray[randomPull] << endl;
+                cout << "You lose!" << endl;
+            }
+            else if (theArray[randomPull] == "paper") {
+                cout << "Enemy pulled out: " << theArray[randomPull] << endl;
+                cout << "Tie!" << endl;
+            }
+        }
+        else if (question == "scissor") {
+            if (theArray[randomPull] == "paper") {
+                cout << "Enemy pulled out: " << theArray[randomPull] << endl;
+                cout << "You win!" << endl;
+            }
+            else if (theArray[randomPull] == "rock") {
+                cout << "Enemy pulled out: " << theArray[randomPull] << endl;
+                cout << "You lose!" << endl;
+            }
+            else if (theArray[randomPull] == "scissor") {
+                cout << "Enemy pulled out: " << theArray[randomPull] << endl;
+                cout << "Tie!" << endl;
+            }
+        }
+    }
+    return 0;
+}
